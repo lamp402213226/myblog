@@ -14,8 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // 共享 分类数据
+        // 共享 后台分类数据
         view()->share('common_cates_data', CatesController::getCates());
+        // 共享 前台分类的数据
+        view()->share('common_cates_home_data', CatesController::getPidCates());
         // 共享 标签数据
         view()->share('common_labels_data', LabelsController::getLabels());
     }

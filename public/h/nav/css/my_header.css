@@ -1,0 +1,29 @@
+/* 菜单栏 开始*/
+#headers div ul li a:hover{
+	background: #F9F9FA;
+}
+/* 菜单栏 结束*/
+
+
+
+/*搜索 开始 */
+#search_div{
+	padding-left: 0px;
+	padding-top:13px;
+	padding-bottom: 15px;
+/*	width: 340px;
+	height:97px;*/
+	/*border: 1px solid #000;*/
+
+}
+#search_div h2{
+	display: inline;
+	height: 50px;
+	line-height: 50px;
+	font-family: '仿宋';
+	font-weight: bold;
+	font-size: 1.8em;
+	margin-right: 15px;
+
+}
+/*搜索 结束*/

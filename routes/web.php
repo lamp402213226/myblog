@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 /*
 	后台模版共享数据
-		common_cates_date  后台分类处理
-
+		common_cates_date  	后台分类处理
+		common_labels_data	后台标签数据
+		common_cates_home_data	前台分类的处理
  */
 // 后台首页的路由
 Route::get('/admins','Admin\UserController@index');
@@ -34,5 +35,10 @@ Route::resource('/admin/labels','Admin\LabelsController');
 Route::resource('admin/articles','Admin\ArticlesController');
 
 // 5.5 测试路由
-Route::resource('admin/test','Admin\TestController');
+// Route::resource('admin/test','Admin\TestController');
+
+
+// 前台首页路由
+Route::get('/','Home\IndexController@index');
+
 

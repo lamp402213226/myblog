@@ -8,6 +8,17 @@ use App\Models\Cates;
 use DB;
 class CatesController extends Controller
 {
+    // 处理前台的分类
+    public static function getPidCates($pid = 0)
+    {
+        $data = Cates::where('pid',$pid)->get();
+        $arr = [];
+        foreach ($data as $key => $value) {
+            $value['sub'] = self::getPidCates($value->id);
+            $arr[] = $value;
+        }
+        return $arr;
+    }
     // 处理分类
     public static function getCates()
     {
@@ -30,8 +41,6 @@ class CatesController extends Controller
      */
     public function index()
     {
-        
-
         //显示分类
         return view('admin.cates.index',['title'=>'分类列表','data'=>self::getCates()]);
     }
